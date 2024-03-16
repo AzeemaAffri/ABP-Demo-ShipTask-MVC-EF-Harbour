@@ -1,0 +1,23 @@
+﻿@page
+@using Harbour.Localization
+@using Harbour.Web.Pages.Ships
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@model EditModalModel
+@inject IStringLocalizer<HarbourResource> L
+@{
+    Layout = null;
+}
+<form asp-page="/Ships/EditModal">
+    <abp-modal>
+        <abp-modal-header title="@L["Update"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="Ship.Id" />
+            <abp-input asp-for="Ship.Name" />
+            <abp-input asp-for="Ship.Type" />
+            <abp-input asp-for="Ship.YearBuilt " />
+            <abp-input asp-for="Ship.PassengerCapacity " />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

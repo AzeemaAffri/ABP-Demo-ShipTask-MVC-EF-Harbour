@@ -1,0 +1,51 @@
+{
+  "Culture": "en",
+  "Texts": {
+    "Menu:Home": "Home",
+    "Welcome": "Welcome",
+    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io.",
+    "Menu:Harbour": "Harbour",
+    "Menu:Fleets": "Fleets",
+    "Actions": "Actions",
+    "Close": "Close",
+    "Delete": "Delete",
+    "Edit": "Edit",
+    "NewFleet": "New fleet",
+    "Name": "Name",
+    "Harbourship": "HarbourShip",
+    "AreYouSure": "Are you sure?",
+    "AreYouSureToDelete": "Are you sure you want to delete this item?",
+    "Enum:HarbourShips.0": "Panamax",
+    "Enum:HarbourShips.1": "Suezmax",
+    "Enum:HarbourShips.2": "PostPanamaxs",
+    "Enum:HarbourShips.3": "Conventionalbulkers",
+    "Enum:HarbourShips.4": "Lakers",
+    "Enum:HarbourShips.5": "Gearedbulker",
+    "FleetDeletionConfirmationMessage": "Are you sure to delete the fleet '{0}'?",
+    "SuccessfullyDeleted": "Successfully deleted!",
+    "Permission:harbour": "Harbour",
+    "Permission:Fleets": "Fleet Management",
+    "Permission:Fleets.Create": "Creating new fleets",
+    "Permission:Fleets.Edit": "Editing the fleets",
+    "Permission:Fleets.Delete": "Deleting the fleets",
+    "Harbour:00001": "There is already an ship with the same name: {name}",
+    "Permission:Ships": "Ship Management",
+    "Permission:Ships.Create": "Creating new ships",
+    "Permission:Ships.Edit": "Editing the ships",
+    "Permission:Ships.Delete": "Deleting the ships",
+    "Menu:Ships": "Ships",
+    "Ships": "Ships",
+    "ShipDeletionConfirmationMessage": "Are you sure to delete the ship '{0}'?",
+    "YearBuilt ": "Year Built ",
+    "PassengerCapacity ": "Passenger Capacity ",
+    "NewShip": "New ship"
+
+
+
+
+
+
+
+
+  }
+}

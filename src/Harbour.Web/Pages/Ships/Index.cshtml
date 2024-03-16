@@ -1,0 +1,37 @@
+﻿@page
+@using Harbour.Localization
+@using Harbour.Permissions
+@using Harbour.Web.Pages.Ships
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<HarbourResource> L
+@inject IAuthorizationService AuthorizationService
+@model IndexModel
+
+@section scripts
+{
+    <abp-script src="/Pages/Ships/Index.js" />
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Ships"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end">
+                @if (await AuthorizationService
+                .IsGrantedAsync(HarbourPermissions.Ships.Create))
+                {
+                    <abp-button id="NewShipButton"
+                                text="@L["NewShip"].Value"
+                                icon="plus"
+                                button-type="Primary" />
+                }
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="ShipsTable"></abp-table>
+    </abp-card-body>
+</abp-card>

@@ -1,0 +1,35 @@
+﻿@page
+@using Harbour.Localization
+@using Harbour.Permissions
+@using Harbour.Web.Pages.Fleets
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Localization
+@model IndexModel
+@inject IStringLocalizer<HarbourResource> L
+@inject IAuthorizationService AuthorizationService
+@section scripts
+{
+    <abp-script src="/Pages/Fleets/Index.js" />
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Fleets"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end">
+                @if (await AuthorizationService.IsGrantedAsync(HarbourPermissions.Fleets.Create))
+                {
+                    <abp-button id="NewFleetButton"
+                                text="@L["NewFleet"].Value"
+                                icon="plus"
+                                button-type="Primary" />
+                }
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="FleetsTable"></abp-table>
+    </abp-card-body>
+</abp-card>
