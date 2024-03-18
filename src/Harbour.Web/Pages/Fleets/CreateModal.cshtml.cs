@@ -17,7 +17,7 @@ public class CreateModalModel : HarbourPageModel
     [BindProperty]
     public CreateFleetViewModel Fleet { get; set; }
 
-    public List<SelectListItem> Ships { get; set; }
+    public List<SelectListItem>Ships { get; set; }
 
     private readonly IFleetAppService _fleetAppService;
 
@@ -35,6 +35,8 @@ public class CreateModalModel : HarbourPageModel
         Ships = shipLookup.Items
             .Select(x => new SelectListItem(x.Name, x.Id.ToString()))
             .ToList();
+
+
     }
 
     public async Task<IActionResult> OnPostAsync()

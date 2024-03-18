@@ -53,6 +53,20 @@
                     data: "shipName"
                 },
                 {
+                    title: l('Type'),
+                    data: "type"
+                },
+
+                {
+                    title: l('yearBuilt'),
+                    data: "yearBuilt"
+                },
+                {
+                    title: l('PassengerCapacity'),
+                    data: "passengerCapacity"
+                },
+                
+                {
                     title: l('HarbourShip'),
                     data: "harbourShip",
                     render: function (data) {

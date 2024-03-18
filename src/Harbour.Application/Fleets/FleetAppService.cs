@@ -58,6 +58,9 @@ public class FleetAppService :
 
         var fleetDto = ObjectMapper.Map<Fleet, FleetDto>(queryResult.fleet);
         fleetDto.ShipName = queryResult.ship.Name;
+        fleetDto.Type = queryResult.ship.Type;
+        fleetDto.YearBuilt = queryResult.ship.YearBuilt;
+        fleetDto.PassengerCapacity = queryResult.ship.PassengerCapacity;
         return fleetDto;
     }
 
@@ -85,6 +88,9 @@ public class FleetAppService :
         {
             var fleetDto = ObjectMapper.Map<Fleet, FleetDto>(x.fleet);
             fleetDto.ShipName = x.ship.Name;
+            fleetDto.Type = x.ship.Type;
+            fleetDto.YearBuilt = x.ship.YearBuilt;
+            fleetDto.PassengerCapacity = x.ship.PassengerCapacity;
             return fleetDto;
         }).ToList();
 
@@ -121,7 +127,33 @@ public class FleetAppService :
                 StringComparison.OrdinalIgnoreCase
             );
         }
+        if (sorting.Contains("shipType", StringComparison.OrdinalIgnoreCase))
+        {
+            return sorting.Replace(
+                "shipType",
+                "ship.Type",
+                StringComparison.OrdinalIgnoreCase
+            );
+        }
+        if (sorting.Contains("shipYearBuilt ", StringComparison.OrdinalIgnoreCase))
+        {
+            return sorting.Replace(
+                "shipYearBuilt",
+                "ship.YearBuilt",
+                StringComparison.OrdinalIgnoreCase
+            );
+            
+        }
 
+        if (sorting.Contains("shipPassengerCapacity", StringComparison.OrdinalIgnoreCase))
+        {
+            return sorting.Replace(
+                "shipPassengerCapacity",
+                "ship.PassengerCapacity",
+                StringComparison.OrdinalIgnoreCase
+            );
+
+        }
         return $"fleet.{sorting}";
     }
 }
